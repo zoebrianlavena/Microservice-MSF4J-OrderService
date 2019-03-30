@@ -31,7 +31,7 @@ import javax.xml.bind.annotation.XmlRootElement;
 
 /**
  *
- * @author 743953
+ * @author Zoe Brian Lavena
  */
 @Entity
 @Table(name = "orderdb.order")
