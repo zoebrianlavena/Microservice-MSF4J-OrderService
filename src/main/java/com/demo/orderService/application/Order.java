@@ -36,7 +36,7 @@ import javax.ws.rs.core.MediaType;
  *
  * @since 1.0.0-SNAPSHOT
  */
-@Path("/order")
+@Path("/service")
 public class Order {
 
     @GET
@@ -58,11 +58,13 @@ public class Order {
     
     @POST
     @Path("/addorder/{tableNumber}/{orderName}")
+    @Produces(MediaType.APPLICATION_JSON)
     @Consumes(MediaType.APPLICATION_JSON)
-    public void addOrder(@PathParam("tableNumber") String tableNumber,
+    public Order_ addOrder(@PathParam("tableNumber") String tableNumber,
                          @PathParam("orderName") String orderName){
         OrderService os = new OrderService();
         Order_ order = new Order_(0, Integer.parseInt(tableNumber), orderName);
         os.addOrder(order);
+        return order;
     }
 }
